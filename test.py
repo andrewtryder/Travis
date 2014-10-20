@@ -14,7 +14,7 @@ class TravisTestCase(PluginTestCase):
     def setUp(self):
         PluginTestCase.setUp(self)
         GitHubToken = os.environ.get('GitHubToken')
-        conf.supybot.plugins.Travis.consumerKey.setValue(GitHubToken)
+        conf.supybot.plugins.Travis.GitHubToken.setValue(GitHubToken)
         
     def testTravis(self):
         self.assertSnarfResponse('reload Travis', 'The operation succeeded.')
